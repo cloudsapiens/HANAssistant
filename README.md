@@ -1,5 +1,5 @@
 
-[![HANAssistant logo](https://github.com/cloudsapiens/HANAssistant/blob/main/hanassistant-logo.png)](https://github.com/cloudsapiens/hanassistant)
+[![HANAssistant logo](https://github.com/cloudsapiens/HANAssistant/blob/main/hanassistant-logo.PNG)](https://github.com/cloudsapiens/hanassistant)
 ```sh
 HANAssistant is a virtual assistant powered by Amazon Sumerian.
 ```
@@ -20,7 +20,7 @@ AWS services used for this solution:
 Source of the SAP HANA, Express Edition (private repository):  [Docker Hub](https://hub.docker.com/_/sap-hana-express-edition)
 
 # Architecture
-[![HANAssistant architecture](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/architecture.png)](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/architecture.png) 
+[![HANAssistant architecture](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/architecture.PNG)](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/architecture.PNG) 
 
 # About SAP HANA, express edition
 ```SAP HANA, express edition``` is a streamlined version of the SAP HANA platform which enables developers to jumpstart application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data. 
@@ -58,38 +58,38 @@ Open AWS Secrets Manager in the AWS Management Console
 
 On the first screen select ```Other type of secrets``` and enter secret key/value combinations like on the following figure:
 
-[![secretsmanager](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager.png)]
+[![secretsmanager](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager.PNG)]
 
 ```Note: change the value for DB_PASSWORD for your password, which you have been set as master password during SAP HANA installation```
 
 On the second screen enter Secret name ```devfest-hana-credentials``` and enter a description.
 
-[![secretsmanager2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager2.png)]
+[![secretsmanager2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager2.PNG)]
 
 On the third screen leave the default settings just like on the following figure:
 
-[![secretsmanager3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager3.png)]
+[![secretsmanager3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager3.PNG)]
 
 ### Step 1: Setup Lambda function
 
 Open Lambda service in the AWS Management Console and create a new Function like on the following figure:
 
-[![lambda](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda1.png)]
+[![lambda](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda1.PNG)]
 
 Clone this repository ```sh git clone https://github.com/cloudsapiens/HANAssistant.git```
 
 Upload the devfest_lambda.zip as shown on the following figure (in the cloned repository -> ```Lambda``` folder:
 
-[![lambda2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda2.png)]
+[![lambda2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda2.PNG)]
 
 Create two Environment Variables with the following keys/values:
-[![lambda3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda3.png)]
+[![lambda3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda3.PNG)]
 
 ```Note: enter the public IP of your ECS cluster```
 
 Change Timout to 30 seconds as shown on the following screenshot:
 
-[![lambda4](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda4.png)]
+[![lambda4](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda4.PNG)]
 
 Finally click on ```Deploy``` to save your function.
 
@@ -97,29 +97,29 @@ Finally click on ```Deploy``` to save your function.
 
 In the Lambda console, select ```Permissions``` and navigate to IAM console by clicking on the Role created automatically during creation of the Lambda function (as shown on figure):
 
-[![iam2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam2.png)]
+[![iam2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam2.PNG)]
 
 In the IAM console, create a new IAM policy as shown on the following figure:
 
-[![iam1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam1.png)]
+[![iam1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam1.PNG)]
 
 Copy and paste the content of the [JSON file](https://github.com/cloudsapiens/HANAssistant/blob/main/lambda/devfest-lambda-secretsmanager-policy.json) and adjust it with proper ARN (Amazon Resource Name) for the previously created Secret. 
 
-[![iam3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam3.png)]
+[![iam3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam3.PNG)]
 
 ```Note: You can find the ARN in the AWS Secrets Manager console```
 
 By clicking on Review, you have to provide a name and description as shown on the following figure:
 
-[![iam4](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam4.png)]
+[![iam4](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam4.PNG)]
 
 Getting back to IAM console and opening the Role assigned to the Lambda function, we can now add the new policy by clicking on ```Attach policies```
 
-[![iam5](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam5.png)]
+[![iam5](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam5.PNG)]
 
 Once found it, click on ```Attach policy```
 
-[![iam6](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam6.png)]
+[![iam6](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/iam6.PNG)]
 
 Now, the Lambda function has access to retrieve DB_USER and DB_PASSWORD for the SAP HANA database. 
 
@@ -130,7 +130,7 @@ We are all set on Lambda side, let's continue with the chatbot.
 Open Lex service in the AWS Management Console
 If you don't have any chatbot yet, you'll get to the main page of the service, clikcing on ```Get started```, you'll be navigated to step 1 to create a new one. On the bottom of the page, click on ```cancel``` because you'll be importing the chatbot. 
 
-[![lex1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lex1.png)]
+[![lex1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lex1.PNG)]
 
 Select the devfest_chatbot.zip file in ```Lex``` folder of the cloned repository
 
@@ -146,7 +146,7 @@ Open Cognito service in AWS Management Console
 
 Click on ```Manage identity pools``` and create a new identity pool as shown on the figure:
 
-[![cognito1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/cognito1.png)]
+[![cognito1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/cognito1.PNG)]
 
 Afterwards click on ```Allow``` and two IAM Roles will be created for you on your behalf (one for authorized and one for unauthorized access). 
 
@@ -171,27 +171,27 @@ Click on ```Speech & Gestures``` to select a template and enter a name for your 
 
 On the right hand side, scroll down to ```AWS Configuration``` and enter Cognito Identity Pool ID, which you have created in the previous step and stored on a safe place.
 
-[![sumerian1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian1.png)]
+[![sumerian1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian1.PNG)]
 
 ```Note: AWS Sumerian uses auto-save functionalities, but you can also save changed pressing ctrl-s```
 
 On the left hand side under ```Entities``` select ```Cristine``` 
 
-[![sumerian2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian2.png)]
+[![sumerian2](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian2.PNG)]
 
 and than select on the right hand size ```State Machine```. Create a new one clicking on the "+" sign.
 
-[![sumerian3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian3.png)]
+[![sumerian3](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian3.PNG)]
 
 Give a name and descriptio to the State Machine as shown on the figure:
 
-[![sumerian5](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian5.png)]
+[![sumerian5](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian5.PNG)]
 
 Let's create the states for the state machine.
 
 The first state is about to initialize SDK. By clicking on ```Add Action``` button, you can select ```AWS SDK Ready``` as action, as shown on figure:
 
-[![sumerian6](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian6.png)]
+[![sumerian6](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian6.PNG)]
 
 Afterwards create a new state by clicking on ```+ Add State``` and assign name ```Key Down``` and action ```Key Down``` to it. Change the default key "A" to "space bar" (just click in the field and press space bar).
 
@@ -205,21 +205,21 @@ The third state will have two actions:
  
  The sixth will do the trick and speak out the response it gets from Lex, so you have to defined a new state with action ```Start Speech``` and also set Speech to ```GestureSpeech``` and mark Use Lex Response [x] as shown on the figure:
  
- [![sumerian7](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian7.png)]
+ [![sumerian7](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian7.PNG)]
  
  The seventh and final step is to connects the states, so that we get a real state machine at the end. Please make sure you connect ```On Response Ready``` inside ```Process with Lex``` state with ```Start Speech```. 
  
- [![sumerian8](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian8.png)]
+ [![sumerian8](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian8.PNG)]
 
 You are almost ready, one more step: adding Dialogue Component (your chatbot). 
 
 By clicking on ```+ Add Component``` on the right hand side at the bottom you can add ```Dialogue``` and enter the name of the chatbot (devfest_chatbot) and $LATEST as version as shown on the figure"
 
-[![sumerian9](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian9.png)]
+[![sumerian9](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian9.PNG)]
  
  After saving it (ctrl-s or waiting for autosave) you can start HANAssistant by clicking on the play button in the middle of the screen. You can also publish it by clicking on ```Publish``` as shown on the figure:
  
- [![sumerian10](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian10.png)]
+ [![sumerian10](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/sumerian10.PNG)]
   
 An URL will be generated and you have access to it without accessing AWS Management Console. 
 
