@@ -1,5 +1,5 @@
 
-[![HANAssistant logo](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/logo3.png)](https://github.com/cloudsapiens/hanassistant)
+[![HANAssistant logo](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/logo.png)](https://github.com/cloudsapiens/hanassistant)
 ```sh
 HANAssistant is a virtual assistant powered by Amazon Sumerian.
 ```
