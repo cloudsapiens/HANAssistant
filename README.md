@@ -58,7 +58,7 @@ Open AWS Secrets Manager in the AWS Management Console
 
 On the first screen select ```Other type of secrets``` and enter secret key/value combinations like on the following figure:
 
-[![secretsmanager](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager.PNG)]
+![secretsmanager](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/secretsmanager.PNG)
 
 ```Note: change the value for DB_PASSWORD for your password, which you have been set as master password during SAP HANA installation```
 
