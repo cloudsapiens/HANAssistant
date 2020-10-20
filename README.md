@@ -137,7 +137,7 @@ Select the devfest_chatbot.zip file in ```Lex``` folder of the cloned repository
 Afterwards create two more intents for the query of SAP HANA database:
 
 Name: DbQueryCeo
- Sample Utterances: ```Could you please tell me who is the CEO of Amazon Web Services```
+ Sample Utterances: ```Who is the CEO of Amazon Web Services```
  Fulfillment: ```[x] AWS Lambda function```
  Lambda function: ```<name of your lambda function>```
  Add permission to Lambda Function (pop-up): ```ok```
