@@ -132,9 +132,23 @@ If you don't have any chatbot yet, you'll get to the main page of the service, c
 
 ![lex1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lex1.PNG)
 
-Select the devfest_chatbot_Export.zip file in ```Lex``` folder of the cloned repository. Edit devfest_chatbot_Export.json inside the .zip file first and adjust the ARN of the Lambda function in row 76 and in 112. Zip the modified .json file and upload it in the Lex console.
+Select the devfest_chatbot.zip file in ```Lex``` folder of the cloned repository and upload it in the Lex console.
 
-Please make sure that in case of intent ```DbQueryCeo``` and ```DbQueryCto``` you select your Lambda function and allow Lex to invoke it and save it.
+Afterwards create two more intents for the query of SAP HANA database:
+
+Name: DbQueryCeo
+ Sample Utterances: ```Could you please tell me who is the CEO of Amazon Web Services```
+ Fulfillment: ```[x] AWS Lambda function```
+ Lambda function: ```<name of your lambda function>```
+ Add permission to Lambda Function (pop-up): ```ok```
+ and finally click on ```Save intent```.
+ 
+ Name: DbQueryCto
+ Sample Utterances: ```Could you please tell me who is the CTO of Amazon Web Services```
+ Fulfillment: ```[x] AWS Lambda function```
+ Lambda function: ```<name of your lambda function>```
+ Add permission to Lambda Function (pop-up): ```ok```
+ and finally click on ```Save intent```.
 
 Afterwards, click on ```Build``` to create your chatbot. 
 
