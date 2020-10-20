@@ -132,7 +132,7 @@ If you don't have any chatbot yet, you'll get to the main page of the service, c
 
 ![lex1](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lex1.PNG)
 
-Select the devfest_chatbot.zip file in ```Lex``` folder of the cloned repository
+Select the devfest_chatbot_Export.zip file in ```Lex``` folder of the cloned repository. Edit devfest_chatbot_Export.json inside the .zip file first and adjust the ARN of the Lambda function in row 76 and in 112. Zip the modified .json file and upload it in the Lex console.
 
 Please make sure that in case of intent ```DbQueryCeo``` and ```DbQueryCto``` you select your Lambda function and allow Lex to invoke it and save it.
 
