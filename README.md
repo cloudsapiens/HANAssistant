@@ -292,7 +292,7 @@ In row 95, enter the name of your chatbot: ```botName: '<YourChatbotsName>'```
 
 Now, you can use the solution.
 
-### Use Case 2 (AI-looking solution with Amazon Lex and Polly integration in browser)
+### Use Case 2 (AI-looking solution with Amazon Lex in browser)
 
 This solutions uses the AWS SDK (JavaScript) to connect Amazon Lex via Cognito. The [index.html](https://github.com/cloudsapiens/DevFest-HANAssistant/blob/main/HANAssistant-Lex-Polly-Integration-UseCase/src/index.html) can be found in ```src``` folder. 
 
