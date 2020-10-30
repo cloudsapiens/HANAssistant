@@ -4,7 +4,7 @@
 HANAssistant is a virtual assistant powered by Amazon Sumerian.
 ```
 
-HANAssistant is a virtual assistant powered by Amazon Sumerian, which consumes data from SAP HANA database running in a container powered by Amazon ECS utilizing additional services like Lambda, Secrets Manager, Coginto, Elastic Container Repository.
+HANAssistant is a virtual assistant powered by Amazon Sumerian, which consumes data from SAP HANA database running in a container powered by Amazon ECS utilizing additional services like Lambda, Secrets Manager, Cognito, Elastic Container Repository.
 
 
 AWS services used for this solution:
