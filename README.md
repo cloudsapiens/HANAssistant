@@ -285,7 +285,9 @@ This solutions uses the AWS SDK (JavaScript) to connect to Amazon Lex via Cognit
 Before use, please change the following in [index.html](https://github.com/cloudsapiens/DevFest-HANAssistant/blob/main/HANAssistant-Chat-UseCase/index.html):
 
 In row 71, enter the AWS Region ID, where your solution runs e.g. us-east-1: ```AWS.config.region = '<YourAWSRegion>'; // Region```
+
 In row 74, enter the Cognito Identity Pool ID: IdentityPoolId: ```'<YourAWSIdentityPoolID>'```
+
 In row 95, enter the name of your chatbot: ```botName: '<YourChatbotsName>'```
 
 Now, you can use the solution.
