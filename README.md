@@ -76,7 +76,7 @@ Open Lambda service in the AWS Management Console and create a new Function like
 
 ![lambda](https://github.com/cloudsapiens/HANAssistant/blob/main/imgs/lambda1.PNG)
 
-Clone this repository ```sh git clone https://github.com/cloudsapiens/HANAssistant.git```
+Clone this repository ```git clone https://github.com/cloudsapiens/HANAssistant.git```
 
 Upload the devfest_lambda.zip as shown on the following figure (in the cloned repository -> ```Lambda``` folder:
 
